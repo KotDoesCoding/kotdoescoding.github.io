@@ -1,30 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <style>
-            body {
-                background-color: limegreen;
-            }
-            
-            p {
-                font-family: "Comic Sans MS", "Comic Sans", cursive;
-            }
-        </style>
-    </head>
 
-    <body>
-        <h1>hi, im kot, otherwise known as epikguy42</h1>
 
-        <p>im a programmer who made things like OneFrogAHour, etc.</p>
-        <p>you can reach out to me via email. this site is still being worked on, sorry if theres not too much content yet.</p>
-        <p>i make music too! heres some of my stuff:</p>
+<head>
+    <meta charset="utf-8" />
+    <title>conamiscs</title>
+    <style>
+        @font-face {
+            font-family: comicsns;
+            src: url('/comic.ttf');
+        }
 
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2193503239&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/kotlecat" title="KotLeCat" target="_blank" style="color: #cccccc; text-decoration: none;">KotLeCat</a> · <a href="https://soundcloud.com/kotlecat/oh-my-gaaaa" title="oh my GAAAA-" target="_blank" style="color: #cccccc; text-decoration: none;">oh my GAAAA-</a></div>
-        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2114557749&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/kotlecat" title="KotLeCat" target="_blank" style="color: #cccccc; text-decoration: none;">KotLeCat</a> · <a href="https://soundcloud.com/kotlecat/bwoah-symphony" title="bwoah symphony" target="_blank" style="color: #cccccc; text-decoration: none;">bwoah symphony</a></div>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-image: url(bg.png);
+            color: white;
+            font-family: 'comicsns';
+            align-items: center;
+            align-self: center;
+            text-align: center;
+            text-shadow: 0px 8px 8px black;
+        }
 
-        <p>one of my favorite things about making music is the fact you get bragging rights, and also because you could get a bit popular.</p>
-        <p>im planning on getting an email for this site, for now, email my gmail if you need to contact me. thanks for visiting!</p>
+        .normalbutton {
+            color: #ffffff;
+            background-image: linear-gradient(#8b0069, #9b0079);
+            font-size: 44px;
+            border-radius: 8px;
+            border-style: none;
+            width: 100%;
+            padding: 5px 5px;
+            cursor: pointer;
+            font-family: 'comicsns';
+            box-shadow: 0px -3px 8px #000000;
+            transition: 0.3s ease-out;
+        }
 
-        <a href="mailto:kotsemailbot@gmail.com">contact</a>
-    </body>
-</html>
+        .navbutton {
+            color: #ffffff;
+            background-color: #30303000;
+            border-radius: 4px;
+            border-style: none;
+            width: 100%;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-family: 'comicsns';
+            box-shadow: 0px -3px 8px #000000;
+            transition: 0.3s ease-out;
+            margin: 2px;
+        }
+
+        .normalbutton:hover {
+            text-shadow: 0px 0px 4px #000000;
+            box-shadow: 0px -3px 8px #ffffff;
+            color: black;
+            background-image: linear-gradient(#ffffff, #ffffff);
+            transform: scale(1.05, 1);
+            transition: 0.3s ease-out;
+        }
+
+        .navbutton:hover {
+            text-shadow: 0px 0px 4px #000000;
+            box-shadow: 0px -3px 8px #ffffff;
+            color: black;
+            background-image: linear-gradient(#ffffff, #ffffff);
+            transform: scale(1, 1.1);
+            transition: 0.3s ease-out;
+        }
+
+        .navbutton:disabled {
+            color: #ff0000;
+            background-image: linear-gradient(#00000080, #00000080);
+            border-radius: 4px;
+            border-style: none;
+            width: 100%;
+            padding: 5px 15px;
+            cursor: default;
+            font-family: 'comicsns';
+            box-shadow: 0px -3px 8px #ff0000;
+        }
+
+        .navbar {
+            list-style-type: none;
+            background-color: #00000080;
+            padding: 10px 10px;
+            overflow: hidden;
+            margin: 0%;
+        }
+
+        .navbar-left {
+            float: left;
+        }
+
+        .navbar-left-label {
+            float: left;
+            margin: 4px;
+        }
+
+        .icon-round {
+            border-radius: 2px;
+            width: 16px;
+            vertical-align: middle;
+        }
+
+        .navbar-right {
+            float: right;
+        }
+
+        .navbar-center {
+            float: none;
+        }
+
+        .navlogo {
+            height: 30px;
+        }
+
+        .imgbox {
+            display: grid;
+            height: 30%;
+        }
+
+        .maincontainer {
+            display: flex;
+            text-align: center;
+            margin: 0 auto;
+            height: 100%;
+            width: 90%;
+            color: #ffffff;
+            background-image: linear-gradient(#ff00aa, #ff00ff);
+            font-size: 24px;
+            border-radius: 100px;
+            border-style: none;
+            padding: 5px 10px;
+            align-items: center;
+            align-self: center;
+            box-shadow: 0px 5px 11px #ff00ff;
+        }
+
+        .center-fit {
+            max-width: 30%;
+            max-height: 30vh;
+            margin: auto;
+        }
+
+        ul {
+            color: white;
+            font-family: 'comicsns';
+            background-color: #770045ea;
+            box-shadow: 0px 0px 8px #000000;
+        }
+
+
+        hr {
+            border-color: white;
+            box-shadow: 0px 0px 8px #000000;
+        }
+
+        .navbuttons {
+            margin: 0 auto;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <link href="https://www.sancomics.net/scicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://www.sancomics.net/scicon.ico" rel="apple-touch-icon" />
+</head>
+
+<body>
+    <ul class="navbar" id="navbar">
+        <li class="navbar-left">
+            <img class="navlogo" src='new-conamiscs-normal.png'>
+        </li>
+        <li class="navbar-left-label">
+            | this site is a work in progress!
+        </li>
+        <li class="navbar-right">
+                        <button class="navbutton" onclick="launchGame('1328761421','Game Hub')">Game Hub <img
+                        class="icon-round"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Roblox_%282025%29_%28App_Icon%29.svg/64px-Roblox_%282025%29_%28App_Icon%29.svg.png"></button>
+        </li>
+
+        <li class="navbar-right">
+            <a href="/Projects/"><button class="navbutton">Projects</button></a>
+        </li>
+
+        <li class="navbar-right">
+            <a href="https://sancomics.net"><button class="navbutton">Home</button></a>
+        </li>
+    </ul>
+    <script src="/RobloxGameLauncher.js?5"></script>
+    <!-- <div class="imgbox">
+        <img class="center-fit" src='sancomics.png'>
+    </div>  -->
+    <h1 style="text-align: center; font-size: 72px;">hi, im conamiscs (previously sancomics)</h1>
+    <h2>my username is just "comic sans" but scrambled</h2>
+    <h3>i really like the comic sans text font</h3>
+    <br>
+    <h1 style="text-align: center;">i make roblox games, currently looking to join a game studio </h1>
+    <p>dm me on discord (@conamiscs) if you need a scripter</p>
+    <p>i have school so i will mainly be available on weekends</p>
+    <br>
+    <h1 style="text-align: center;">Programming is my passion, im hoping to expand my knowledge to programming languages
+        like c++, python, and javascript</h1>
+    <p>
+        Currently, i know lua, html/css, and beginning to learn JavaScript
+    </p>
+    <hr>
+    <h2>Links</h2>
+    <div class="navbuttons">
+        <button class="normalbutton" id="link-roblox"
+            onclick="window.open('https://www.roblox.com/users/489922635/profile')">Roblox</button>
+        <button class="normalbutton" id="link-tiktok"
+            onclick="window.open('https://www.tiktok.com/@sancomicsms')">TikTok</button>
+        <button class="normalbutton" id="link-youtube"
+            onclick="window.open('https://www.youtube.com/@sancomicsMS')">YouTube</button>
+    </div>
+    <br>
+    <footer>made by conamiscs</footer>
+</body>
